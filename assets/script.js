@@ -20,19 +20,31 @@ function setTimer() {
 
 
 startBtn.addEventListener("click", function(event) {
-    var state = element.getAttribute("data-state");
     clearInterval()
     setTimer();
     secondsLeft = 10;
- 
-    if (element.matches(".form")) {
-        var state = element.getAttribute("data-state");
-    if (state === "hidden") {
-            element.dataset.state = "visible";     
-        } else {
-        element.setAttribute("data-state", "hidden")
-            }
-    }
 });
 
- 
+
+function Showquestion1() {
+    var q1 = document.getElementById("question1"),
+        displayValue = "";
+    if (q1.style.display == "block")
+        displayValue = "";
+
+    q1.style.display = displayValue;
+}
+
+
+
+
+// var state = element.getAttribute("data-state");
+
+// if (element.matches(".form")) {
+//     var state = element.getAttribute("data-state");
+// if (state === "hidden") {
+//         element.dataset.state = "visible";     
+//     } else {
+//     element.setAttribute("data-state", "hidden")
+//         }
+// }
