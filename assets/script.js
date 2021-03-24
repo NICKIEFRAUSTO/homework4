@@ -1,23 +1,34 @@
 var timerEl = document.querySelector(".timer");
-var mainEl = document.getElementById("#main");
+var mainEl = document.getElementById("main");
+var startBtn = document.getElementById("startBtn");
+
 
 var secondsLeft = 10;
+var timerInterval;
+
+
+
 
 function setTimer() {
-    var timerInterval = setInterval(function() {
+    timerInterval = setInterval(function() {
+        timerEl.textContent = secondsLeft + " Time Remaining";
         secondsLeft--;
-        timerEl.textContent = secondsLeft + "Time Remaining";
         
-        if (secondsLeft === 0) {
+        if (secondsLeft <= 0) {
+            timerEl.textContent = secondsLeft + " Time Remaining";
             clearInterval(timerInterval);
             sendMessage();
         }
-    }  , 
-    1000);
+    } , 1000);
 }
 
 
-timerEl.addEventListener("click", function() {
-setTimer();
+startBtn.addEventListener("click", function() {
+    clearInterval()
+    setTimer();
+    secondsLeft = 10;
+    
 }
 );
+
+
